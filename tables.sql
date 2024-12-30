@@ -120,16 +120,3 @@ collections = [
 ]
 
 
-# Create the schema in Weaviate
-#client.schema.create(schema)
-for collection in collections:
-    client.collections.create(
-        name=collection["name"],
-        properties=collection["properties"],
-        vectorizer_config=collection["vectorizer"]
-    )
-    print(f"Collection '{collection['name']}' created successfully!")
-
-print("Schema created successfully!")
-
-client.close()
